@@ -10,24 +10,24 @@ namespace mcqQuestions
             var userName = Console.ReadLine();
 
             if (userName == "") {
-              PrintErrorOutput();
-              userName = Console.ReadLine();
+              // PrintErrorGetInput();
+              userName = PrintErrorGetInput();
             }
 
             Console.WriteLine("\nHow old are you?");
             var userAge =  Console.ReadLine();
 
             if (userAge == "") {
-              PrintErrorOutput();
-              userAge = Console.ReadLine();
+              // PrintErrorGetInput();
+              userAge = PrintErrorGetInput();
             }
 
             Console.WriteLine("\nWhat month were your born in?");
             var userMonthDOB = Console.ReadLine();
 
             if (userMonthDOB == "") {
-              PrintErrorOutput();
-              userMonthDOB = Console.ReadLine();
+              // PrintErrorGetInput();
+              userMonthDOB = PrintErrorGetInput();
             }
 
             Console.WriteLine("\nName: " + userName);
@@ -45,8 +45,9 @@ namespace mcqQuestions
             }
         }
 
-        static void PrintErrorOutput() {
+        static string PrintErrorGetInput() {
           Console.WriteLine("Error! Valid input required. Try again: ");
+          return Console.ReadLine();
         }
     }
 }
