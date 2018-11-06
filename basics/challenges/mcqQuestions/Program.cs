@@ -7,28 +7,16 @@ namespace mcqQuestions
         static void Main(string[] args)
         {
             Console.WriteLine("\nWhats your name?");
-            var userName = Console.ReadLine();
-
-            if (userName == "") {
-              // PrintErrorGetInput();
-              userName = PrintErrorGetInput();
-            }
+            // var userName = Console.ReadLine();
+            var userName = GetInputAnswer();
 
             Console.WriteLine("\nHow old are you?");
-            var userAge =  Console.ReadLine();
-
-            if (userAge == "") {
-              // PrintErrorGetInput();
-              userAge = PrintErrorGetInput();
-            }
+            // var userAge =  Console.ReadLine();
+            var userAge = GetInputAnswer();
 
             Console.WriteLine("\nWhat month were your born in?");
-            var userMonthDOB = Console.ReadLine();
-
-            if (userMonthDOB == "") {
-              // PrintErrorGetInput();
-              userMonthDOB = PrintErrorGetInput();
-            }
+            // var userMonthDOB = Console.ReadLine();
+            var userMonthDOB = GetInputAnswer();
 
             Console.WriteLine("\nName: " + userName);
             Console.WriteLine("Age: " + userAge);
@@ -45,9 +33,16 @@ namespace mcqQuestions
             }
         }
 
-        static string PrintErrorGetInput() {
-          Console.WriteLine("Error! Valid input required. Try again: ");
-          return Console.ReadLine();
+        static string GetInputAnswer() {
+
+          var answer = Console.ReadLine();
+
+          // Check if the param is empty, get new input and return new value.
+          if (answer == "") {
+            Console.WriteLine("Error! Valid input required. Try again: ");
+            return Console.ReadLine();
+          }
+          return answer;
         }
     }
 }
