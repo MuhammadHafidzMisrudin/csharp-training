@@ -10,7 +10,7 @@ namespace mcqQuestions
             var userName = Console.ReadLine();
 
             if (userName == "") {
-              PrintErrorOutput();
+              // PrintErrorOutput();
               userName = Console.ReadLine();
             }
 
@@ -18,7 +18,7 @@ namespace mcqQuestions
             var userAge =  Console.ReadLine();
 
             if (userAge == "") {
-              PrintErrorOutput();
+              // PrintErrorOutput();
               userAge = Console.ReadLine();
             }
 
@@ -26,7 +26,7 @@ namespace mcqQuestions
             var userMonthDOB = Console.ReadLine();
 
             if (userMonthDOB == "") {
-              PrintErrorOutput();
+              // PrintErrorOutput();
               userMonthDOB = Console.ReadLine();
             }
 
