@@ -15,9 +15,10 @@ namespace schoolTracker
           // var studentNames = new string[studentCount];
           // var studentGrades = new int[studentCount];
 
-          // Initialise dynamic lists collection.
+          // Initialise dynamic lists collection with types (string, int, Student).
           var studentNames = new List<string>();
           var studentGrades = new List<int>();
+          var studentList = new List<Student>();
 
           Console.WriteLine("Capacity studentNames: {0}", studentNames.Capacity);
           Console.WriteLine("Capacity studentGrades: {0}", studentGrades.Capacity);
@@ -27,12 +28,20 @@ namespace schoolTracker
 
           // Use while loop for dynamic data insertion.
           while (addElement) {
+
+            var studentObject = new Student();
+
             Console.WriteLine();
             Console.WriteLine("Student Name: ");
-            studentNames.Add(Console.ReadLine());
+            studentObject.Name = Console.ReadLine();
+            // studentNames.Add(Console.ReadLine());
 
             Console.WriteLine("Student Grade: ");
-            studentGrades.Add(int.Parse(Console.ReadLine()));
+            studentObject.Grade = int.Parse(Console.ReadLine());
+            // studentGrades.Add(int.Parse(Console.ReadLine()));
+
+            // Add new student details to the student list.
+            studentList.Add(studentObject);
 
             Console.WriteLine("Add another? y/n: ");
             var inputDetails = Console.ReadLine();
@@ -60,14 +69,19 @@ namespace schoolTracker
           // }
 
           // Display output of student details.
-          for (int i=0; i<studentNames.Count; i++) {
-            Console.WriteLine("Name: {0}, Grade: {1}", studentNames[i], studentGrades[i]);
+          // for (int i=0; i<studentList.Count; i++) {
+          //   Console.WriteLine("Name: {0}, Grade: {1}", studentList[i].studentObject.Name, studentList[i].studentObject.Grade);
+          // }
+          foreach (var student in studentList) {
+            Console.WriteLine("Name: {0}, Grade: {1}", student.Name, student.Grade);
           }
         }
     }
 
     class Student
     {
+      // Implement Object-Oriented.
+
       public string Name;
       public int Grade;
       public string Birthday;
