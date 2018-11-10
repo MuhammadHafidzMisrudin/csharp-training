@@ -24,7 +24,6 @@ namespace schoolTracker
           // Console.WriteLine("Capacity studentGrades: {0}", studentGrades.Capacity);
           Console.WriteLine("Capacity studentList: {0}", studentList.Capacity);
 
-
           // Set a flag.
           var addElement = true;
 
@@ -39,11 +38,9 @@ namespace schoolTracker
             // Set propeties values.
             Console.WriteLine("Student Name: ");
             studentObject.Name = Console.ReadLine();
-            // studentNames.Add(Console.ReadLine());
 
             Console.WriteLine("Student Grade: ");
             studentObject.Grade = int.Parse(Console.ReadLine());
-            // studentGrades.Add(int.Parse(Console.ReadLine()));
 
             Console.WriteLine("Student Birthday: ");
             studentObject.Birthday = Console.ReadLine();
@@ -52,7 +49,7 @@ namespace schoolTracker
             studentObject.Address = Console.ReadLine();
 
             Console.WriteLine("Student Phone: ");
-            studentObject.Phone = int.Parse(Console.ReadLine());
+            studentObject.SetPhoneNumber(int.Parse(Console.ReadLine()));
 
             // Add new created student object (& details) to the student list.
             studentList.Add(studentObject);
@@ -91,7 +88,7 @@ namespace schoolTracker
                                                                                                              studentList[i].Grade,
                                                                                                              studentList[i].Birthday,
                                                                                                              studentList[i].Address,
-                                                                                                             studentList[i].Phone);
+                                                                                                             studentList[i].GetPhoneNumber());
           }
 
           // Uncomment to use foreach.
@@ -104,11 +101,22 @@ namespace schoolTracker
     class Student
     {
       // Implement Object-Oriented.
-
       public string Name;
       public int Grade;
       public string Birthday;
       public string Address;
-      public int Phone;
+      private int phone;
+      // public int Phone;
+
+      // Implement encapsulation.
+      // Add function to set value for private variable Phone.
+      public void SetPhoneNumber(int number) {
+        phone = number;
+      }
+
+      // Add function to get value for private variable Phone.
+      public int GetPhoneNumber() {
+        return phone;
+      }
     }
 }
