@@ -49,7 +49,8 @@ namespace schoolTracker
             studentObject.Address = Console.ReadLine();
 
             Console.WriteLine("Student Phone: ");
-            studentObject.SetPhoneNumber(int.Parse(Console.ReadLine()));
+            studentObject.Phone = int.Parse(Console.ReadLine());
+            // studentObject.SetPhoneNumber(int.Parse(Console.ReadLine()));
 
             // Add new created student object (& details) to the student list.
             studentList.Add(studentObject);
@@ -83,12 +84,12 @@ namespace schoolTracker
 
           // Display output of student details.
           for (int i=0; i<studentList.Count; i++) {
-            Console.WriteLine("List => {0}, Name: {1}, Grade: {2}, Birthday: {2}, Address: {3}, Phone: {4}", studentList[i],
+            Console.WriteLine("List => {0}, Name: {1}, Grade: {2}, Birthday: {3}, Address: {4}, Phone: {5}", studentList[i],
                                                                                                              studentList[i].Name,
                                                                                                              studentList[i].Grade,
                                                                                                              studentList[i].Birthday,
                                                                                                              studentList[i].Address,
-                                                                                                             studentList[i].GetPhoneNumber());
+                                                                                                             studentList[i].Phone);
           }
 
           // Uncomment to use foreach.
@@ -101,12 +102,12 @@ namespace schoolTracker
     class Student
     {
       // Implement Object-Oriented.
+      // Initialise fields.
       public string Name;
       public int Grade;
       public string Birthday;
       public string Address;
       private int phone;
-      // public int Phone;
 
       // Implement encapsulation.
       // Add function to set value for private variable Phone.
@@ -117,6 +118,17 @@ namespace schoolTracker
       // Add function to get value for private variable Phone.
       public int GetPhoneNumber() {
         return phone;
+      }
+
+      // Implement Phone property.
+      // Add properties.
+      public int Phone {
+        get {
+          return this.phone;
+        }
+        set {
+          this.phone = value;
+        }
       }
     }
 }
