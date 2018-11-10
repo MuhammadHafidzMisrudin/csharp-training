@@ -55,6 +55,10 @@ namespace schoolTracker
             // Add new created student object (& details) to the student list.
             studentList.Add(studentObject);
 
+            // Count student.
+            Student.CountStudent++;
+            Console.WriteLine("Student => {0}", Student.CountStudent);
+
             Console.WriteLine("Add another? y/n: ");
             var inputDetails = Console.ReadLine();
 
@@ -68,8 +72,8 @@ namespace schoolTracker
           // Console.WriteLine("Total studentNames: {0}", studentNames.Count);
           // Console.WriteLine("Capacity studentGrades: {0}", studentGrades.Capacity);
           // Console.WriteLine("Total studentNames: {0}", studentGrades.Count);
-          Console.WriteLine("Capacity studentList: {0}", studentList.Capacity);
-          Console.WriteLine("Total studentList: {0}", studentList.Count);
+          Console.WriteLine("Capacity in studentList: {0}", studentList.Capacity);
+          Console.WriteLine("Total students in studentList: {0}", studentList.Count);
           Console.WriteLine();
 
           // Uncomment this for test.
@@ -108,6 +112,9 @@ namespace schoolTracker
       public string Birthday;
       public string Address;
       private int phone;
+
+      // Initialise static member variable.
+      public static int CountStudent = 0;
 
       // Implement encapsulation.
       // Add function to set value for private variable Phone.
