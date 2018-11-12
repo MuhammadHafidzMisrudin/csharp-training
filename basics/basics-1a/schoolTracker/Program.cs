@@ -36,21 +36,26 @@ namespace schoolTracker
             Console.WriteLine();
 
             // Set propeties values.
-            Console.WriteLine("Student Name: ");
-            studentObject.Name = Console.ReadLine();
+            // Console.WriteLine("Student Name: ");
+            // studentObject.Name = Console.ReadLine();
+            studentObject.Name = Util.Console.AskInputConsole("Student Name: ");
 
-            Console.WriteLine("Student Grade: ");
-            studentObject.Grade = int.Parse(Console.ReadLine());
+            // Console.WriteLine("Student Grade: ");
+            // studentObject.Grade = int.Parse(Console.ReadLine());
+            studentObject.Grade = int.Parse(Util.Console.AskInputConsole("Student Grade: "));
 
-            Console.WriteLine("Student Birthday: ");
-            studentObject.Birthday = Console.ReadLine();
+            // Console.WriteLine("Student Birthday: ");
+            // studentObject.Birthday = Console.ReadLine();
+            studentObject.Birthday = Util.Console.AskInputConsole("Student Birthday: ");
 
-            Console.WriteLine("Student Address: ");
-            studentObject.Address = Console.ReadLine();
+            // Console.WriteLine("Student Address: ");
+            // studentObject.Address = Console.ReadLine();
+            studentObject.Address = Util.Console.AskInputConsole("Student Address: ");
 
-            Console.WriteLine("Student Phone: ");
-            studentObject.Phone = int.Parse(Console.ReadLine());
+            // Console.WriteLine("Student Phone: ");
+            // studentObject.Phone = int.Parse(Console.ReadLine());
             // studentObject.SetPhoneNumber(int.Parse(Console.ReadLine()));
+            studentObject.Phone = int.Parse(Util.Console.AskInputConsole("Student Phone: "));
 
             // Add new created student object (& details) to the student list.
             studentList.Add(studentObject);
