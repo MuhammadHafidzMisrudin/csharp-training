@@ -15,6 +15,9 @@ namespace schoolTracker
           // var studentNames = new string[studentCount];
           // var studentGrades = new int[studentCount];
 
+          // Invoke ImportData()
+          ImportData();
+
           // Initialise dynamic lists collection with types (string, int, Student).
           var studentNames = new List<string>();
           var studentGrades = new List<int>();
@@ -86,7 +89,7 @@ namespace schoolTracker
           // for (int i=0; i<studentCount; i++) {
           //   Console.WriteLine("Student Name: ");
           //   studentNames[i] = Console.ReadLine();
-          //
+          //Name
           //   Console.WriteLine("Student Grade: ");
           //   studentGrades[i] = int.Parse(Console.ReadLine());
           // }
@@ -106,6 +109,17 @@ namespace schoolTracker
           //   Console.WriteLine("Name: {0}, Grade: {1}", student.Name, student.Grade);
           // }
         }
+
+        // Add function to allow spreadsheet importer to import student data.
+        static void ImportData() {
+          var importedStudentData = new Student("Inma", 90, "03/1992", "Sydney CBD", 98765);
+          Console.WriteLine(importedStudentData.Name);
+          Console.WriteLine(importedStudentData.Grade);
+          Console.WriteLine(importedStudentData.Birthday);
+          Console.WriteLine(importedStudentData.Address);
+          Console.WriteLine(importedStudentData.Phone);
+          Console.WriteLine();
+        }
     }
 
     class Student
@@ -120,6 +134,21 @@ namespace schoolTracker
 
       // Initialise static member variable.
       public static int CountStudent = 0;
+
+      // Empty Constructor class.
+      public Student() {
+
+      }
+
+      // Initialise a constructor for Student class.
+      public Student(string name, int grade, string birthday, string address, int phone) {
+        Console.WriteLine("Constructor() executes when the object is instantiated");
+        Name = name;
+        Grade = grade;
+        Birthday = birthday;
+        Address = address;
+        Phone = phone;
+      }
 
       // Implement encapsulation.
       // Add function to set value for private variable Phone.
