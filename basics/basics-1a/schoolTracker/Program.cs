@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace schoolTracker
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
+namespace schoolTracker {
+    class Program {
+        static void Main(string[] args) {
           // Uncomment this for test.
           // Console.WriteLine("How many students in your class?");
           // var studentCount = int.Parse(Console.ReadLine());
@@ -89,7 +86,7 @@ namespace schoolTracker
           // for (int i=0; i<studentCount; i++) {
           //   Console.WriteLine("Student Name: ");
           //   studentNames[i] = Console.ReadLine();
-          //Name
+          //
           //   Console.WriteLine("Student Grade: ");
           //   studentGrades[i] = int.Parse(Console.ReadLine());
           // }
@@ -122,8 +119,7 @@ namespace schoolTracker
         }
     }
 
-    class Student
-    {
+    class Student {
       // Implement Object-Oriented.
       // Initialise fields.
       public string Name;
