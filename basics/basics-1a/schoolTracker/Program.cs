@@ -119,14 +119,37 @@ namespace schoolTracker {
         }
     }
 
-    class Student {
-      // Implement Object-Oriented.
+    // Implement Object-Oriented.
+    // Base Class, SchoolMember.
+    class SchoolMember {
+
       // Initialise fields.
       public string Name;
+      public string Address;
+      protected int phone;
+
+      // Implement Phone property.
+      // Add properties.
+      public int Phone {
+        get {
+          return this.phone;
+        }
+        set {
+          this.phone = value;
+        }
+      }
+    }
+
+    // Implement Object-Oriented.
+    // Derived Class, Student.
+    class Student : SchoolMember {
+
+      // Initialise fields.
+      // public string Name;
       public int Grade;
       public string Birthday;
-      public string Address;
-      private int phone;
+      // public string Address;
+      // private int phone;
 
       // Initialise static member variable.
       public static int CountStudent = 0;
@@ -148,24 +171,36 @@ namespace schoolTracker {
 
       // Implement encapsulation.
       // Add function to set value for private variable Phone.
-      public void SetPhoneNumber(int number) {
-        phone = number;
-      }
+      // public void SetPhoneNumber(int number) {
+      //   phone = number;
+      // }
 
       // Add function to get value for private variable Phone.
-      public int GetPhoneNumber() {
-        return phone;
-      }
+      // public int GetPhoneNumber() {
+      //   return phone;
+      // }
 
       // Implement Phone property.
       // Add properties.
-      public int Phone {
-        get {
-          return this.phone;
-        }
-        set {
-          this.phone = value;
-        }
-      }
+      // public int Phone {
+      //   get {
+      //     return this.phone;
+      //   }
+      //   set {
+      //     this.phone = value;
+      //   }
+      // }
+    }
+
+    // Implement Object-Oriented.
+    // Derived Class, Teacher.
+    class Teacher : SchoolMember {
+
+      // Initialise fields.
+      // public string Name;
+      // public string Address;
+      // public int Phone;
+      public string Subject;
+      public string Class;
     }
 }
