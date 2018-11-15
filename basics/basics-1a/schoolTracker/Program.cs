@@ -42,7 +42,13 @@ namespace schoolTracker {
 
             // Console.WriteLine("Student Grade: ");
             // studentObject.Grade = int.Parse(Console.ReadLine());
-            studentObject.Grade = int.Parse(Util.Console.AskInputConsole("Student Grade: "));
+            // studentObject.Grade = int.Parse(Util.Console.AskInputConsole("Student Grade: "));
+            var resultInputGrade = int.TryParse(Util.Console.AskInputConsole("Student Grade: "), out studentObject.Grade);
+
+            // Add exception handling statement to check input validation.
+            if (!resultInputGrade) {
+              Console.WriteLine("Error, input Grade must be integer.");
+            }
 
             // Console.WriteLine("Student Birthday: ");
             // studentObject.Birthday = Console.ReadLine();
