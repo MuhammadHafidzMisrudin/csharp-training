@@ -44,8 +44,9 @@ namespace schoolTracker {
 
               // Console.WriteLine("Student Grade: ");
               // studentObject.Grade = int.Parse(Console.ReadLine());
-              studentObject.Grade = int.Parse(Util.Console.AskInputConsole("Student Grade: "));
+              // studentObject.Grade = int.Parse(Util.Console.AskInputConsole("Student Grade: "));
               // var resultInputGrade = int.TryParse(Util.Console.AskInputConsole("Student Grade: "), out studentObject.Grade);
+              studentObject.Grade = Util.Console.AskInputInteger("Student Grade: ");
 
               // Add exception handling statement to check input validation.
               // if (!resultInputGrade) {
@@ -63,7 +64,8 @@ namespace schoolTracker {
               // Console.WriteLine("Student Phone: ");
               // studentObject.Phone = int.Parse(Console.ReadLine());
               // studentObject.SetPhoneNumber(int.Parse(Console.ReadLine()));
-              studentObject.Phone = int.Parse(Util.Console.AskInputConsole("Student Phone: "));
+              // studentObject.Phone = int.Parse(Util.Console.AskInputConsole("Student Phone: "));
+              studentObject.Phone = Util.Console.AskInputInteger("Student Phone: ");
 
               // Add new created student object (& details) to the student list.
               studentList.Add(studentObject);
@@ -78,9 +80,9 @@ namespace schoolTracker {
               if (inputDetails != "y" && inputDetails != "Y") {
                 addElement = false;
               }
-            } catch (FormatException e) {
-              Console.WriteLine("Input student data must be correct and valid type, i.e: integer or string");
-            } catch (Exception e) {
+            } catch (FormatException msg) {
+              Console.WriteLine(msg.Message);
+            } catch (Exception) {
               Console.WriteLine("Error adding student, please try again.");
             }
           } // end while loop.
