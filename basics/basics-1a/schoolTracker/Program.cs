@@ -30,51 +30,58 @@ namespace schoolTracker {
           // Use while loop for dynamic data insertion.
           while (addElement) {
 
-            // Create a student object.
-            var studentObject = new Student();
+            // Implement try-catch exception handling for specific case of input exception.
+            try {
+              // Create a student object.
+              var studentObject = new Student();
 
-            Console.WriteLine();
+              Console.WriteLine();
 
-            // Set propeties values.
-            // Console.WriteLine("Student Name: ");
-            // studentObject.Name = Console.ReadLine();
-            studentObject.Name = Util.Console.AskInputConsole("Student Name: ");
+              // Set propeties values.
+              // Console.WriteLine("Student Name: ");
+              // studentObject.Name = Console.ReadLine();
+              studentObject.Name = Util.Console.AskInputConsole("Student Name: ");
 
-            // Console.WriteLine("Student Grade: ");
-            // studentObject.Grade = int.Parse(Console.ReadLine());
-            // studentObject.Grade = int.Parse(Util.Console.AskInputConsole("Student Grade: "));
-            var resultInputGrade = int.TryParse(Util.Console.AskInputConsole("Student Grade: "), out studentObject.Grade);
+              // Console.WriteLine("Student Grade: ");
+              // studentObject.Grade = int.Parse(Console.ReadLine());
+              studentObject.Grade = int.Parse(Util.Console.AskInputConsole("Student Grade: "));
+              // var resultInputGrade = int.TryParse(Util.Console.AskInputConsole("Student Grade: "), out studentObject.Grade);
 
-            // Add exception handling statement to check input validation.
-            if (!resultInputGrade) {
-              Console.WriteLine("Error, input Grade must be integer.");
-            }
+              // Add exception handling statement to check input validation.
+              // if (!resultInputGrade) {
+              //   Console.WriteLine("Error, input Grade must be integer.");
+              // }
 
-            // Console.WriteLine("Student Birthday: ");
-            // studentObject.Birthday = Console.ReadLine();
-            studentObject.Birthday = Util.Console.AskInputConsole("Student Birthday: ");
+              // Console.WriteLine("Student Birthday: ");
+              // studentObject.Birthday = Console.ReadLine();
+              studentObject.Birthday = Util.Console.AskInputConsole("Student Birthday: ");
 
-            // Console.WriteLine("Student Address: ");
-            // studentObject.Address = Console.ReadLine();
-            studentObject.Address = Util.Console.AskInputConsole("Student Address: ");
+              // Console.WriteLine("Student Address: ");
+              // studentObject.Address = Console.ReadLine();
+              studentObject.Address = Util.Console.AskInputConsole("Student Address: ");
 
-            // Console.WriteLine("Student Phone: ");
-            // studentObject.Phone = int.Parse(Console.ReadLine());
-            // studentObject.SetPhoneNumber(int.Parse(Console.ReadLine()));
-            studentObject.Phone = int.Parse(Util.Console.AskInputConsole("Student Phone: "));
+              // Console.WriteLine("Student Phone: ");
+              // studentObject.Phone = int.Parse(Console.ReadLine());
+              // studentObject.SetPhoneNumber(int.Parse(Console.ReadLine()));
+              studentObject.Phone = int.Parse(Util.Console.AskInputConsole("Student Phone: "));
 
-            // Add new created student object (& details) to the student list.
-            studentList.Add(studentObject);
+              // Add new created student object (& details) to the student list.
+              studentList.Add(studentObject);
 
-            // Count student.
-            Student.CountStudent++;
-            Console.WriteLine("Student => {0}", Student.CountStudent);
+              // Count student.
+              Student.CountStudent++;
+              Console.WriteLine("Student => {0}", Student.CountStudent);
 
-            Console.WriteLine("Add another? y/n: ");
-            var inputDetails = Console.ReadLine();
+              Console.WriteLine("Add another? y/n: ");
+              var inputDetails = Console.ReadLine();
 
-            if (inputDetails != "y" && inputDetails != "Y") {
-              addElement = false;
+              if (inputDetails != "y" && inputDetails != "Y") {
+                addElement = false;
+              }
+            } catch (FormatException e) {
+              Console.WriteLine("Input student data must be correct and valid type, i.e: integer or string");
+            } catch (Exception e) {
+              Console.WriteLine("Error adding student, please try again.");
             }
           } // end while loop.
 
