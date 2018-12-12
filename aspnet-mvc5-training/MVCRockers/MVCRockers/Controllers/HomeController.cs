@@ -34,5 +34,15 @@ namespace MVCRockers.Controllers
         {
             return View("About");
         }
+
+        // Add a new action method for Backstage
+        public ActionResult Backstage(string secret, string format)
+        {
+            if (secret != "special")
+            {
+                return new HttpStatusCodeResult(403); // forbidden View
+            }
+            return View();
+        }
     }
 }
