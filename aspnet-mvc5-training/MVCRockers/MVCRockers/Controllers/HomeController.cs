@@ -25,8 +25,16 @@ namespace MVCRockers.Controllers
         // Home/Contact
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "What do you think?";
+            return View();
+        }
 
+        // Add an Action Selector method for saving data or information from Contact form
+        [HttpPost]
+        public ActionResult Contact(string message)
+        {
+            // Save this information from form and act on it
+            ViewBag.Message = "Thanks for the feedback.";
             return View();
         }
 
@@ -42,6 +50,20 @@ namespace MVCRockers.Controllers
             {
                 return new HttpStatusCodeResult(403); // forbidden View
             }
+
+            if (format == "text")
+            {
+                return Content("You Rock!");
+            }
+            else if (format == "json")
+            {
+                return Json(new { password = "You Rock!", expiry = DateTime.UtcNow.ToShortDateString() }, JsonRequestBehavior.AllowGet);
+            }
+            else if (format == "clean")
+            {
+                return PartialView();
+            }
+
             return View();
         }
     }
