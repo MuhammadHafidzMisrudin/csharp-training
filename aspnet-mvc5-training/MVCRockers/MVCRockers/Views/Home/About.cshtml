@@ -1,7 +1,43 @@
 ﻿@{
     ViewBag.Title = "About";
+
+    var FavoriteColor = "Blue";
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
+<div style="color: @FavoriteColor;">@ViewBag.Message</div>
+
+@*
+    This is a comment line
+    and block comment
+*@
+
 
 <p>Use this area to provide additional information.</p>
+
+<div>Following is a list of value of currency.</div>
+
+@{
+    @* Create a list *@
+    var amounts = new List<decimal> { 100, 25.2m, -30, 1, -19, -99, 300 };
+}
+
+<ul>
+    @* Iterate through and render out the list *@
+    @foreach (var x in amounts)
+    {
+        <li>@formatAmount(x)</li>
+    }
+</ul>
+
+@* A helper razor function *@
+@helper formatAmount(decimal amount)
+{
+    var color = "green";
+
+    if (amount < 0)
+    {
+        color = "Red";
+    }
+    <span style="color: @color;">@String.Format("{0:C}", amount)</span>
+}

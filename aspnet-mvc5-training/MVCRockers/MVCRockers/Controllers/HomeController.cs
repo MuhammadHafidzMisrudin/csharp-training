@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVCRockers.Filters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -22,19 +23,22 @@ namespace MVCRockers.Controllers
             return View();
         }
 
+        [MyLoggingFilter]
         // Home/Contact
         public ActionResult Contact()
         {
             ViewBag.Message = "What do you think?";
+
             return View();
         }
 
-        // Add an Action Selector method for saving data or information from Contact form
+        // Add an Action Selector method for saving data or information from Contact form.
         [HttpPost]
         public ActionResult Contact(string message)
         {
-            // Save this information from form and act on it
+            // Save this information from form and act on it.
             ViewBag.Message = "Thanks for the feedback.";
+
             return View();
         }
 
@@ -43,12 +47,12 @@ namespace MVCRockers.Controllers
             return View("About");
         }
 
-        // Add a new action method for Backstage
+        // Add a new action method for Backstage.
         public ActionResult Backstage(string secret, string format)
         {
             if (secret != "special")
             {
-                return new HttpStatusCodeResult(403); // forbidden View
+                return new HttpStatusCodeResult(403); // forbidden View.
             }
 
             if (format == "text")
