@@ -18,19 +18,19 @@
 <div>Following is a list of value of currency.</div>
 
 @{
-    @* Create a list *@
+    @* Create a list. *@
     var amounts = new List<decimal> { 100, 25.2m, -30, 1, -19, -99, 300 };
 }
 
 <ul>
-    @* Iterate through and render out the list *@
+    @* Iterate through and render out the list. *@
     @foreach (var x in amounts)
     {
         <li>@formatAmount(x)</li>
     }
 </ul>
 
-@* A helper razor function *@
+@* A helper razor function. *@
 @helper formatAmount(decimal amount)
 {
     var color = "green";

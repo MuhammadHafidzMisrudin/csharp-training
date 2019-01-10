@@ -13,7 +13,7 @@ namespace MVCRockers
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            // Add a new custom route for Backstage
+            // Add a new custom route for Backstage.
             routes.MapRoute(
                 name: "Backstage Pass",
                 url: "backstage/{secret}/{format}",
