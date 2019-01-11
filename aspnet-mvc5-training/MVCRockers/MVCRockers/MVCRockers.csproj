@@ -195,6 +195,17 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Backstage.jpeg" />
+    <Content Include="Images\Chicago.jpeg" />
+    <Content Include="Images\DesMoines.jpeg" />
+    <Content Include="Images\Drummer.jpeg" />
+    <Content Include="Images\KansasCity.jpeg" />
+    <Content Include="Images\Minneapolis.jpeg" />
+    <Content Include="Images\NewYork.jpeg" />
+    <Content Include="Images\Omaha.jpeg" />
+    <Content Include="Images\progress.gif" />
+    <Content Include="Images\RockBand1.jpeg" />
+    <Content Include="Images\StLouis.jpeg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
