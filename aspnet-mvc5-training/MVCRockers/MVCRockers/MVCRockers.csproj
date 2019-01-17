@@ -258,6 +258,7 @@
     <Content Include="Views\Home\Backstage.cshtml" />
     <Content Include="Views\Home\_BackstageLayout.cshtml" />
     <Content Include="Views\Concert\Index.cshtml" />
+    <Content Include="Views\Concert\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
