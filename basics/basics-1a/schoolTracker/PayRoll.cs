@@ -13,13 +13,14 @@ namespace schoolTracker
 
     class PayRoll
     {
+        // Create a single list of payees for multiple objects.
         List<IPayee> payees = new List<IPayee>();
 
         //Teacher teacher1 = new Teacher();
         //Teacher teacher2 = new Teacher();
         //Principal principal = new Principal();
 
-        // Constructor to initialise the instances of Teachers and Princi[als. 
+        // Constructor to initialise the instances of Teachers and Principals. 
         // Then add them to the list of payees.
         public PayRoll()
         {
@@ -29,7 +30,7 @@ namespace schoolTracker
             payees.Add(new Principal());
         }
 
-        // Add a method to pay for Teachers and Principal(s).
+        // Add a method to pay for Teachers and Principals.
         public void PayAll()
         {
             foreach (var payee in payees)

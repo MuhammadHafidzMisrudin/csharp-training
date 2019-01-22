@@ -30,6 +30,7 @@ namespace schoolTracker
             // Invoke ImportData()
             ImportData();
 
+            // Create payroll instance and invoke payment method.
             PayRoll payroll = new PayRoll();
             payroll.PayAll();
             Console.WriteLine();
