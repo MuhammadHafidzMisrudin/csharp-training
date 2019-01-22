@@ -15,6 +15,14 @@ namespace Util
             return System.Console.ReadLine();
         }
 
+        // Add a function overloading to request input data for integer.
+        // Same method name but different parameters.
+        public static string AskInputConsole(int question)
+        {
+            System.Console.WriteLine(question);
+            return System.Console.ReadLine();
+        }
+
         // Add function return input integer.
         static public int AskInputInteger(string question)
         {
