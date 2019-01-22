@@ -30,6 +30,10 @@ namespace schoolTracker
             // Invoke ImportData()
             ImportData();
 
+            PayRoll payroll = new PayRoll();
+            payroll.PayAll();
+            Console.WriteLine();
+
             // Initialise dynamic lists collection with types (string, int, Student).
             var studentNames = new List<string>();
             var studentGrades = new List<int>();
@@ -275,14 +279,14 @@ namespace schoolTracker
 
     // Implement Object-Oriented.
     // Derived Class, Teacher.
-    class Teacher : SchoolMember
-    {
+    //class Teacher : SchoolMember
+    //{
 
-        // Initialise fields.
-        // public string Name;
-        // public string Address;
-        // public int Phone;
-        public string Subject;
-        public string Class;
-    }
+    //    // Initialise fields.
+    //    // public string Name;
+    //    // public string Address;
+    //    // public int Phone;
+    //    public string Subject;
+    //    public string Class;
+    //}
 }
