@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -9,6 +10,9 @@ namespace MVCRockers.Models
 {
     public class Concert
     {
+        [Key] // Add a primary key.
+        public string Id { get; set; } 
+
         // Add properties for Concert model class.
         [Required(ErrorMessage = "A Name field is required!")]
         [StringLength(20)]
@@ -18,6 +22,7 @@ namespace MVCRockers.Models
         public string City { get; set; }
 
         [Display(Name = "Concert Date")]
+        //[DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime ConcertDate { get; set; }
 
         [Display(Name = "Backstage Passes")]
