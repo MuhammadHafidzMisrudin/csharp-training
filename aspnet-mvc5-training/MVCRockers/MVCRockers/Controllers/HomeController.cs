@@ -39,7 +39,7 @@ namespace MVCRockers.Controllers
             // Save this information from form and act on it.
             ViewBag.Message = "Thanks for the feedback.";
 
-            return View();
+            return PartialView("_ThanksForFeedback");
         }
 
         public ActionResult Foo()
