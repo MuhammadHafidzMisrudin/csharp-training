@@ -31,8 +31,11 @@ namespace MVCRockers.Models
         [DataType(DataType.Currency)]
         public double Price { get; set; }
 
+        [Display(Name = "Passcode")]
         [Required(ErrorMessage = "A Password field is required!")]
-        [RegularExpression(@"\d{3,9}\w{3,9}")]
+        [RegularExpression(@"\d{3,9}\w{3,9}", ErrorMessage = "Passcode must be 3-9 digits and 3-9 lower or upper case letters.")]
         public string Password { get; set; }
+
+        public string PromoterName { get; set; }
     }
 }
