@@ -10,7 +10,36 @@
 </form>*@
 
 <div id="formSection">
-    @* Apply MS Ajax, using the unobtrusive Ajax *@
+    <form role="form" method="post" id="contactForm">
+        <div>@ViewBag.Message</div>
+        <div class="form-group">
+            <textarea id="message" name="message"></textarea>
+        </div>
+        <button type="submit" class="btn btn-default" value="send">Submit</button>
+        <p>
+            <img src="~/Images/progress.gif" id="progress" style="display:none;" />
+        </p>
+    </form>
+</div>
+
+@section scripts {
+    <script>
+        $('#contactForm').submit(function () {
+            $("#progress").show();
+            $.post('', { message: $('#message').val() }).done(function (response) {
+                setTimeout(function () {
+                    $('#formSection').html(response);
+                }, 3000);
+            });
+            return false;
+        });
+    </script>
+}
+
+
+
+@* Apply MS Ajax, using the unobtrusive Ajax *@
+@*<div id="formSection">
     @using (Ajax.BeginForm(new AjaxOptions { HttpMethod = "post", InsertionMode = InsertionMode.Replace, UpdateTargetId = "formSection" }))
     {
         <form role="form" method="post">
@@ -21,18 +50,20 @@
             <button type="submit" class="btn btn-default" value="send">Submit</button>
         </form>
     }
-</div>
+</div>*@
 
-@section scripts {
-    @* Add the unobtrusive Ajax library *@
+
+@* Add the unobtrusive Ajax library *@
+@*@section scripts {
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
-}
+}*@
+
 
 @*<form role="form" method="post">
-        <div class="form-group">
-            <textarea name="message"></textarea>
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+    <div class="form-group">
+        <textarea name="message"></textarea>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
 </form>*@
 
 <address>
