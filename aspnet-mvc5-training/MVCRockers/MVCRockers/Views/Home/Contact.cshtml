@@ -33,7 +33,7 @@
         function contactViewModel() {
             var self = this;
             self.message = ko.observable('');
-            self.charactersRemaining = ko.computed(function () {
+            self.charactersRemaining = ko.computed(() => {
                 return 100 - self.message().length;
             });
         }
@@ -41,10 +41,10 @@
     </script>
 
     <script>
-        $('#contactForm').submit(function () {
+        $('#contactForm').submit(() => {
             $("#progress").show();
-            $.post('', { message: $('#message').val() }).done(function (response) {
-                setTimeout(function () {
+            $.post('', { message: $('#message').val() }).done((response) => {
+                setTimeout(() => {
                     $('#formSection').html(response);
                 }, 3000);
             });
